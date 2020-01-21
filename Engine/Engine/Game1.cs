@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 
 using Engine.World.Sprites2D;
+using Engine.World.Sprites2D.Cursor;
 using Engine.World.GlobalVariables;
 
 namespace Engine
@@ -25,6 +26,9 @@ namespace Engine
         protected override void Initialize()
         {
             sprites = new List<Sprite2D>();
+
+            //TODO: Initialize Objects here
+            Globals.cursor = new Cursor();
 
             base.Initialize();
         }

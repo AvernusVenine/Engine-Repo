@@ -14,9 +14,9 @@ namespace Engine.World.Sprites2D
     public class Sprite2D
     {
 
-        private Texture2D image;
-        private Vector2 topleft, botRight;
-        private Color color;
+        protected Texture2D image;
+        protected Vector2 topleft, botRight;
+        protected Color color;
 
         public Sprite2D(Texture2D _image, Vector2 _topLeft, Vector2 _botRight, Color _color)
         {

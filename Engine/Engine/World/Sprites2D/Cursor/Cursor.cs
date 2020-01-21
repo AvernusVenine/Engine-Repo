@@ -22,7 +22,9 @@ namespace Engine.World.Sprites2D.Cursor
 
         public void Update(GameTime _gameTime)
         {
+            MouseState mouseState = Mouse.GetState();
 
+            base.topleft = new Vector2(mouseState.X, mouseState.Y);
 
             base.Update(_gameTime);
         }
