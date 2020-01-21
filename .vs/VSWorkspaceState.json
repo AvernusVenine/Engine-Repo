@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Engine",
+    "\\Engine\\Engine",
+    "\\Engine\\Engine\\Content",
+    "\\Engine\\Engine\\Properties",
+    "\\Engine\\Engine\\World",
+    "\\Engine\\Engine\\World\\Sprites2D",
+    "\\Engine\\Engine\\World\\Sprites2D\\Cursor"
+  ],
+  "SelectedNode": "\\Engine\\Engine\\World\\Sprites2D\\Cursor",
+  "PreviewInSolutionExplorer": false
+}

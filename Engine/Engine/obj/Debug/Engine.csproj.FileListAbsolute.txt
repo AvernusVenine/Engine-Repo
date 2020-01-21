@@ -1,0 +1,2 @@
+E:\Engine-Repo\Engine\Engine\obj\Debug\Engine.csprojAssemblyReference.cache
+E:\Engine-Repo\Engine\Engine\obj\Debug\Engine.csproj.CoreCompileInputs.cache
