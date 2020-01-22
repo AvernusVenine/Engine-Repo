@@ -18,15 +18,14 @@ namespace Engine.World.Sprites2D
         protected Vector2 topleft, botRight;
         protected Color color;
 
-        public Sprite2D(Texture2D _image, Vector2 _topLeft, Vector2 _botRight, Color _color)
+        public Sprite2D(Texture2D _image, Vector2 _topLeft, Vector2 _botRight)
         {
             image = _image;
             topleft = _topLeft;
             botRight = _botRight;
-            color = _color;
         }
 
-        public void Update(GameTime _gameTime)
+        public virtual void Update(GameTime _gameTime)
         {
 
         }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Engine.World.Sprites2D;
 using Engine.World.Sprites2D.Cursor;
 using Engine.World.GlobalVariables;
+using Engine.World.Inputs;
 
 namespace Engine
 {
@@ -30,6 +31,9 @@ namespace Engine
             //TODO: Initialize Objects here
             Globals.cursor = new Cursor();
 
+            Globals.mouse = new SMouse();
+            Globals.keyboard = new SKeyboard();
+
             base.Initialize();
         }
         protected override void LoadContent()
@@ -50,6 +54,11 @@ namespace Engine
                 Exit();
 
             // TODO: Add your update logic here
+
+            Globals.keyStates.UpdateState(Mouse.GetState());
+            Globals.mouse.Update(gameTime);
+            Globals.keyStates.UpdateState(Keyboard.GetState());
+            Globals.keyboard.Update(gameTime);
 
             for(int i = 0; i < sprites.Count; i++)
             {
