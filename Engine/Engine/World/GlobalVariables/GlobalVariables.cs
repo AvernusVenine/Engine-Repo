@@ -21,7 +21,7 @@ namespace Engine.World.GlobalVariables
         //Global Sprites
         public static Cursor cursor;
 
-        //Global Data-Structs
+        //Global Handlers
         public static KeyStateHandler keyStates;
 
         //User Inputs

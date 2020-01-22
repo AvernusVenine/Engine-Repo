@@ -55,9 +55,8 @@ namespace Engine
 
             // TODO: Add your update logic here
 
-            Globals.keyStates.UpdateState(Mouse.GetState());
+            Globals.keyStates.UpdateState();
             Globals.mouse.Update(gameTime);
-            Globals.keyStates.UpdateState(Keyboard.GetState());
             Globals.keyboard.Update(gameTime);
 
             for(int i = 0; i < sprites.Count; i++)
