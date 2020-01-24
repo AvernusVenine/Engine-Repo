@@ -55,7 +55,6 @@ namespace Engine
 
             // TODO: Add your update logic here
 
-            Globals.keyStates.UpdateState();
             Globals.mouse.Update(gameTime);
             Globals.keyboard.Update(gameTime);
 

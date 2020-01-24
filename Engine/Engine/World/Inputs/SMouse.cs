@@ -18,7 +18,7 @@ namespace Engine.World.Inputs
 
         public SMouse()
         {
-            pressedButtons = new MouseButton[3];
+            pressedButtons = new MouseButton[10];
         }
 
         //Change list to an array
@@ -54,14 +54,15 @@ namespace Engine.World.Inputs
             return pressedButtons;
         }
 
-        public bool isPressed(MouseButton mouseButton)
+        public bool isPressed(MouseButton _button)
         {
-            return pressedButtons[(int)mouseButton] != MouseButton.Released;
+            return pressedButtons[(int)_button] != MouseButton.Released;
         }
 
-        public bool isHeald(MouseButton mouseButton)
+        //TODO test if button is held
+        public bool isHeld(MouseButton _button)
         {
-
+            return false;
         }
     }
 
@@ -72,7 +73,7 @@ namespace Engine.World.Inputs
         Mouse4,
         Mouse5,
 
-        Released = 9,
-        Heald = 10
+        Released = 8,
+        Held = 9
     }
 }

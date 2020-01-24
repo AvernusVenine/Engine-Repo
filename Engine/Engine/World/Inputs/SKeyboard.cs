@@ -18,7 +18,7 @@ namespace Engine.World.Inputs
 
         public SKeyboard()
         {
-            pressedKeys = new Keys[0];
+            pressedKeys = new Keys[254];
         }
 
         public void Update(GameTime _gameTime)
@@ -29,6 +29,16 @@ namespace Engine.World.Inputs
         public Keys[] getPressedKeys()
         {
             return pressedKeys;
+        }
+
+        public bool isPressed(Keys _key)
+        {
+            return Keyboard.GetState().IsKeyDown(_key);
+        }
+
+        public bool isHeld(Keys key)
+        {
+            return false;
         }
     }
 }
