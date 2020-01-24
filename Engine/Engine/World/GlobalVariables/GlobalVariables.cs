@@ -21,11 +21,17 @@ namespace Engine.World.GlobalVariables
         //Global Sprites
         public static Cursor cursor;
 
-        //Global Handlers
-        public static KeyStateHandler keyStates;
-
         //User Inputs
         public static SMouse mouse;
         public static SKeyboard keyboard;
+
+        private struct Settings
+        {
+            
+
+
+        }
+
     }
+
 }

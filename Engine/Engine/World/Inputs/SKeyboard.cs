@@ -14,15 +14,21 @@ namespace Engine.World.Inputs
     public class SKeyboard
     {
 
+        private Keys[] pressedKeys;
+
         public SKeyboard()
         {
-
+            pressedKeys = new Keys[0];
         }
 
         public void Update(GameTime _gameTime)
         {
-
+            pressedKeys = Keyboard.GetState().GetPressedKeys();
         }
 
+        public Keys[] getPressedKeys()
+        {
+            return pressedKeys;
+        }
     }
 }

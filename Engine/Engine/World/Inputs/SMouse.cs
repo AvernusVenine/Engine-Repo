@@ -13,50 +13,66 @@ namespace Engine.World.Inputs
 {
     public class SMouse
     {
+
+        private MouseButton[] pressedButtons;
+
         public SMouse()
         {
-
+            pressedButtons = new MouseButton[3];
         }
 
+        //Change list to an array
         public void Update(GameTime _gameTime)
         {
-
-        }
-    }
-
-    public enum SMouseState : int //Max 1-7
-    {
-        Left = 1,
-        Middle = 2,
-        Right = 3
-    }
-
-    public class KeyStateHandler
-    {
-
-        private bool[] keyStates;
-
-        public KeyStateHandler()
-        {
-            keyStates = new bool[254];
-        }
-        
-        public void UpdateState()
-        {
-            Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
-
-            for (int i = 0; i < pressedKeys.Count(); i++)
-            {
-                keyStates[(int)pressedKeys[i]] = Keyboard.GetState().IsKeyDown(pressedKeys[i]);
-            }
-
             MouseState mouseState = Mouse.GetState();
-            //TODO Possibly improve?
-            keyStates[(int)SMouseState.Left] = (mouseState.LeftButton == ButtonState.Pressed);
-            keyStates[(int)SMouseState.Middle] = (mouseState.MiddleButton == ButtonState.Pressed);
-            keyStates[(int)SMouseState.Right] = (mouseState.RightButton == ButtonState.Pressed);
 
+            if (mouseState.LeftButton == ButtonState.Pressed)
+            {
+                pressedButtons[(int)MouseButton.LeftButton] = MouseButton.LeftButton;
+            } else
+            {
+                pressedButtons[(int)MouseButton.LeftButton] = MouseButton.Released;
+            }
+            if (mouseState.MiddleButton == ButtonState.Pressed)
+            {
+                pressedButtons[(int)MouseButton.MiddleButton] = MouseButton.MiddleButton;
+            } else
+            {
+                pressedButtons[(int)MouseButton.MiddleButton] = MouseButton.Released;
+            }
+            if (mouseState.RightButton == ButtonState.Pressed)
+            {
+                pressedButtons[(int)MouseButton.RightButton] = MouseButton.RightButton;
+            } else
+            {
+                pressedButtons[(int)MouseButton.RightButton] = MouseButton.Released;
+            }
         }
 
+        public MouseButton[] getPressedButtons()
+        {
+            return pressedButtons;
+        }
+
+        public bool isPressed(MouseButton mouseButton)
+        {
+            return pressedButtons[(int)mouseButton] != MouseButton.Released;
+        }
+
+        public bool isHeald(MouseButton mouseButton)
+        {
+
+        }
+    }
+
+    public enum MouseButton : int { 
+        LeftButton,
+        MiddleButton,
+        RightButton,
+        Mouse4,
+        Mouse5,
+
+        Released = 9,
+        Heald = 10
     }
 }
