@@ -46,6 +46,7 @@
     <Compile Include="World\Inputs\SKeyboard.cs" />
     <Compile Include="World\Inputs\SMouse.cs" />
     <Compile Include="World\GlobalVariables\GlobalVariables.cs" />
+    <Compile Include="World\Scene\Scene.cs" />
     <Compile Include="World\Sprites2D\Cursor\Cursor.cs" />
     <Compile Include="World\Sprites2D\Sprite2D.cs" />
     <Compile Include="Program.cs" />

@@ -2,20 +2,27 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using System.IO;
 
 using Engine.World.Sprites2D;
 using Engine.World.Sprites2D.Cursor;
 using Engine.World.GlobalVariables;
 using Engine.World.Inputs;
+using Engine.World.Scene;
 
 namespace Engine
 {
+
     public class Game1 : Game
     {
+
+        private const string SPRITES_PATH = "";
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
         private List<Sprite2D> sprites; //Possibly create own data structure
+        private List<Scene> scenes;
         
         public Game1()
         {
@@ -26,10 +33,13 @@ namespace Engine
         //For non graphical content
         protected override void Initialize()
         {
+            //TODO: Initialize Game Lists here
             sprites = new List<Sprite2D>();
+            scenes = new List<Scene>();
 
-            //TODO: Initialize Objects here
+            //TODO: Initialize Global Variables here
             Globals.cursor = new Cursor();
+            Globals.spriteTemplates = new List<Sprite2D>();
 
             Globals.mouse = new SMouse();
             Globals.keyboard = new SKeyboard();
@@ -40,7 +50,11 @@ namespace Engine
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-
+            //Load all sprite images
+            for (int i = 0; i < Globals.spriteTemplates.Count; i++)
+            {
+                Globals.spriteTemplates[i].LoadContent();
+            }
         }
 
         protected override void UnloadContent()

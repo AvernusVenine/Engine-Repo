@@ -15,10 +15,11 @@ namespace Engine.World.Inputs
     {
 
         private MouseButton[] pressedButtons;
+        private const int TOTAL_BUTTONS = 10;
 
         public SMouse()
         {
-            pressedButtons = new MouseButton[10];
+            pressedButtons = new MouseButton[TOTAL_BUTTONS];
         }
 
         //Change list to an array

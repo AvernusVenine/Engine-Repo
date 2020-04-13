@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 using Engine.World.Sprites2D.Cursor;
+using Engine.World.Sprites2D;
 using Engine.World.Inputs;
 
 namespace Engine.World.GlobalVariables
@@ -17,6 +18,8 @@ namespace Engine.World.GlobalVariables
     {
 
         public static GraphicsDeviceManager graphicsDeviceManager;
+
+        public static List<Sprite2D> spriteTemplates;
 
         //Global Sprites
         public static Cursor cursor;
